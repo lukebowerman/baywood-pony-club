@@ -20,7 +20,7 @@ The **first** submission sends a confirmation email to that address. Click the l
 
 ## Custom domain
 
-When the domain is ready: Settings → Pages → Custom domain, enter the domain, then add the DNS records GitHub shows. GitHub provides HTTPS for free.
+The site is served at https://baywoodponyclub.org (DNS on Cloudflare, set in Settings → Pages → Custom domain). Email to info@baywoodponyclub.org is forwarded by Cloudflare Email Routing.
 
 ## Credits
 
