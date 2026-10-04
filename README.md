@@ -10,7 +10,7 @@ Plain HTML and CSS, no build step. GitHub Pages publishes the `main` branch auto
 - **Colors and layout:** `assets/css/style.css`. Brand colors are at the top.
 - **Photos:** the three dashed boxes in the "A year at Baywood" section are placeholders. Add a photo to `assets/img/` and replace a `<figure class="photo-slot">…</figure>` with
   `<img src="assets/img/your-photo.jpg" alt="Describe the photo">`. Get parent permission before posting photos of members.
-- **Facebook link:** search `TODO` in `index.html` and paste the club's Facebook page URL.
+- **Social links:** Facebook and Instagram links appear in the Contact section and the footer of `index.html`.
 
 ## Interest form
 
