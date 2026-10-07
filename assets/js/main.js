@@ -53,3 +53,37 @@ if (form) {
       '<p>We got your note and will be in touch soon about visiting a meeting.</p></div>';
   }
 }
+
+// Gallery: click a photo to see it larger. Without JavaScript the link opens the image.
+const lightbox = document.getElementById('lightbox');
+const zoomLinks = [...document.querySelectorAll('a.zoom')];
+if (lightbox && lightbox.showModal && zoomLinks.length) {
+  const lbImg = lightbox.querySelector('img');
+  const lbCap = lightbox.querySelector('figcaption');
+  let current = 0;
+  const show = (i) => {
+    current = (i + zoomLinks.length) % zoomLinks.length;
+    const link = zoomLinks[current];
+    const thumb = link.querySelector('img');
+    lbImg.src = link.href;
+    lbImg.alt = thumb.alt;
+    const caption = link.closest('figure').querySelector('figcaption');
+    lbCap.textContent = link.dataset.caption || (caption ? caption.textContent : thumb.alt);
+  };
+  zoomLinks.forEach((link, i) => link.addEventListener('click', (e) => {
+    e.preventDefault();
+    show(i);
+    lightbox.showModal();
+  }));
+  lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());
+  lightbox.querySelector('.lb-prev').addEventListener('click', () => show(current - 1));
+  lightbox.querySelector('.lb-next').addEventListener('click', () => show(current + 1));
+  // Clicking the dark backdrop (not the photo or buttons) closes it
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+}

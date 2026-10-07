@@ -64,7 +64,7 @@
           <p class="hero-note">Riding in Thurston County at Forest Park Equestrian Center and other local facilities.</p>
         </div>
         <figure class="hero-photo">
-          <img src="assets/img/camp-trail-ride.jpg" alt="Five Baywood riders lined up on their horses and ponies at summer camp, with tall evergreens behind them" width="1600" height="803">
+          <a href="assets/img/camp-trail-ride.jpg" class="zoom" data-caption="Summer camp at Aspen Farms" aria-label="Enlarge photo: Baywood riders at summer camp"><img src="assets/img/camp-trail-ride.jpg" alt="Four Baywood riders lined up on their horses and ponies at summer camp, with tall evergreens behind them" width="1500" height="953"></a>
         </figure>
       </div>
     </section>
@@ -101,20 +101,20 @@
         <p class="year-key"><span class="key on"></span> Two riding Saturdays and one horse-care Tuesday each month <span class="key camp"></span> Summer break and camp</p>
 
         <div class="gallery">
-          <figure>
-            <img src="assets/img/mounted-meeting.jpg" alt="Three riders on their ponies in an indoor arena with their instructor, who is wearing a pink tutu" width="1000" height="762" loading="lazy">
+          <figure style="flex-grow: 1.312">
+            <a href="assets/img/mounted-meeting.jpg" class="zoom" aria-label="Enlarge photo: Mounted meeting"><img src="assets/img/mounted-meeting.jpg" alt="Three riders on their ponies in an indoor arena with their instructor, who is wearing a pink tutu" width="1000" height="762" loading="lazy"></a>
             <figcaption>Mounted meeting</figcaption>
           </figure>
-          <figure>
-            <img src="assets/img/unmounted-meeting.jpg" alt="A member practicing clipping on a hay bale at an unmounted meeting" width="900" height="1200" loading="lazy">
+          <figure style="flex-grow: 0.750">
+            <a href="assets/img/unmounted-meeting.jpg" class="zoom" aria-label="Enlarge photo: Unmounted meeting"><img src="assets/img/unmounted-meeting.jpg" alt="A member practicing clipping on a hay bale at an unmounted meeting" width="900" height="1200" loading="lazy"></a>
             <figcaption>Unmounted meeting</figcaption>
           </figure>
-          <figure>
-            <img style="object-position: 0% 50%" src="assets/img/quiz-rally.jpg" alt="Four members holding ribbons on stage at a quiz rally" width="1000" height="750" loading="lazy">
+          <figure style="flex-grow: 1.333">
+            <a href="assets/img/quiz-rally.jpg" class="zoom" aria-label="Enlarge photo: Quiz rally"><img src="assets/img/quiz-rally.jpg" alt="Four members holding ribbons on stage at a quiz rally" width="1000" height="750" loading="lazy"></a>
             <figcaption>Quiz rally</figcaption>
           </figure>
-          <figure>
-            <img style="object-position: 0% 50%" src="assets/img/summer-camp.jpg" alt="Members and an instructor at summer camp at Aspen Farms" width="960" height="720" loading="lazy">
+          <figure style="flex-grow: 1.333">
+            <a href="assets/img/summer-camp.jpg" class="zoom" aria-label="Enlarge photo: Summer camp at Aspen Farms"><img src="assets/img/summer-camp.jpg" alt="Members and an instructor at summer camp at Aspen Farms" width="960" height="720" loading="lazy"></a>
             <figcaption>Summer camp at Aspen Farms</figcaption>
           </figure>
         </div>
@@ -279,6 +279,16 @@
       </div>
     </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-next" type="button" aria-label="Next photo">&#8250;</button>
+  </dialog>
 
   <footer class="site-footer">
     <div class="stripe" aria-hidden="true">

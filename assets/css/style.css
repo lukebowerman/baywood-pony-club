@@ -94,20 +94,21 @@ p { margin: 0 0 1em; }
 .eyebrow-gold { color: var(--gold); }
 
 /* Hero */
-.hero { background: linear-gradient(180deg, var(--cream) 0%, #fff 85%); padding: 56px 0 64px; }
+.hero { background: linear-gradient(180deg, var(--cream) 0%, #fff 85%); padding: 56px 0 48px; }
 .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .lead { font-size: 1.25rem; color: #2f3a4f; max-width: 34em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 18px; }
 .hero-note { color: var(--muted); font-size: .98rem; }
 .hero-photo { margin: 0; }
+.hero-photo a.zoom { display: block; cursor: zoom-in; border-radius: var(--radius); }
 .hero-photo img, .why-photo img {
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius);
   box-shadow: 0 18px 40px rgba(19,55,126,.18);
 }
-.hero-photo img { aspect-ratio: 16 / 9; object-position: center 60%; border-bottom: 8px solid var(--gold); }
+.hero-photo img { aspect-ratio: 3 / 2; object-position: center 62%; border-bottom: 8px solid var(--gold); }
 
 /* Sections */
-.section { padding: 80px 0; }
+.section { padding: 64px 0; }
 .section-tint { background: var(--sky); }
 .section-navy { background: linear-gradient(180deg, #1c4290 0%, var(--navy-deep) 100%); color: #e9eef8; }
 .section-navy h2, .section-navy h3 { color: #fff; }
@@ -131,15 +132,30 @@ p { margin: 0 0 1em; }
 .key.camp { background: var(--gold); margin-left: 12px; }
 
 /* Photo placeholders */
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; }
-.gallery figure { margin: 0; }
-.gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; }
+.gallery { display: flex; gap: 12px; margin-top: 32px; max-width: 960px; }
+.gallery figure { margin: 0; flex-basis: 0; min-width: 0; }
+.gallery a.zoom { display: block; border-radius: 8px; overflow: hidden; cursor: zoom-in; }
+.gallery img { width: 100%; height: auto; transition: transform .2s ease; }
+.gallery a.zoom:hover img { transform: scale(1.04); }
 .gallery figcaption { margin-top: 6px; font-weight: 600; color: var(--navy); font-size: .9rem; line-height: 1.3; }
 .photo-slot {
   margin: 0; aspect-ratio: 4 / 3; border-radius: var(--radius);
   border: 2px dashed #9aa8c6; background: repeating-linear-gradient(45deg, #f4f6fb, #f4f6fb 12px, #eceff7 12px, #eceff7 24px);
   display: grid; place-items: center; text-align: center; padding: 16px; color: var(--muted); font-weight: 600;
 }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: rgba(8, 18, 40, .88); }
+.lightbox figure { margin: 0; text-align: center; }
+.lightbox img { max-width: min(92vw, 1200px); max-height: 82vh; width: auto; height: auto; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox figcaption { color: #fff; font-weight: 600; margin-top: 12px; }
+.lightbox button { position: fixed; background: rgba(255,255,255,.14); color: #fff; border: 0; border-radius: 50%; width: 48px; height: 48px; font-size: 2rem; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+.lightbox button:hover { background: rgba(255,255,255,.28); }
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
 
 /* Why Pony Club */
 .why-inner { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
@@ -206,7 +222,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 900px) {
   .hero-inner, .why-inner, .join-inner, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-photo { max-width: 640px; }
-  .hero-photo img { aspect-ratio: 16 / 9; }
+  .hero-photo img { aspect-ratio: 3 / 2; }
   .why-photo { max-width: 460px; }
   .why-photo img { aspect-ratio: 4 / 3; object-position: center 25%; }
   .section { padding: 60px 0; }
@@ -225,8 +241,8 @@ p { margin: 0 0 1em; }
   .nav-toggle[aria-expanded="true"] .bar:nth-child(4) { transform: translateY(-7px) rotate(-45deg); }
   .stat-grid, .feature-grid, .field-row { grid-template-columns: 1fr; }
   .gallery { gap: 6px; }
-  .gallery img { border-radius: 6px; }
-  .gallery figcaption { font-size: .72rem; }
+  .gallery a.zoom { border-radius: 6px; }
+  .gallery figcaption { display: none; }
   .year { grid-template-columns: repeat(6, 1fr); }
   .hero { padding-top: 36px; }
   .interest-form, .price-card { padding: 24px 20px; }
