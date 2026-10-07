@@ -132,7 +132,7 @@ p { margin: 0 0 1em; }
 .key.camp { background: var(--gold); margin-left: 12px; }
 
 /* Photo placeholders */
-.gallery { display: flex; gap: 12px; margin-top: 32px; max-width: 960px; }
+.gallery { display: flex; gap: 16px; margin-top: 32px; }
 .gallery figure { margin: 0; flex-basis: 0; min-width: 0; }
 .gallery a.zoom { display: block; border-radius: 8px; overflow: hidden; cursor: zoom-in; }
 .gallery img { width: 100%; height: auto; transition: transform .2s ease; }
