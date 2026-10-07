@@ -8,8 +8,7 @@ Plain HTML and CSS, no build step. GitHub Pages publishes the `main` branch auto
 
 - **Text:** everything is in `index.html`. You can edit it right on github.com (pencil icon) and commit.
 - **Colors and layout:** `assets/css/style.css`. Brand colors are at the top.
-- **Photos:** the three dashed boxes in the "A year at Baywood" section are placeholders. Add a photo to `assets/img/` and replace a `<figure class="photo-slot">…</figure>` with
-  `<img src="assets/img/your-photo.jpg" alt="Describe the photo">`. Get parent permission before posting photos of members.
+- **Photos:** club photos live in `assets/img/` (web-sized, with location data stripped). To swap one, add the new file there and change the matching `<img src=…>` and `alt` text in `index.html`. Get parent permission before posting photos of members, and don't picture Whitney or Betsy.
 - **Social links:** Facebook and Instagram links appear in the Contact section and the footer of `index.html`.
 
 ## Interest form
@@ -24,4 +23,4 @@ The site is served at https://baywoodponyclub.org (DNS on Cloudflare, set in Set
 
 ## Credits
 
-Pony Club logos and the riding photos are from the USPC brand kit and remain © The United States Pony Clubs, Inc.
+Pony Club logos are from the USPC brand kit and remain © The United States Pony Clubs, Inc.
