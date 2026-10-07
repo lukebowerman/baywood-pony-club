@@ -66,7 +66,7 @@ if (lightbox && lightbox.showModal && zoomLinks.length) {
     const link = zoomLinks[current];
     const thumb = link.querySelector('img');
     lbImg.src = link.href;
-    lbImg.alt = thumb.alt;
+    lbImg.alt = link.dataset.alt || thumb.alt;
     const caption = link.closest('figure').querySelector('figcaption');
     lbCap.textContent = link.dataset.caption || (caption ? caption.textContent : thumb.alt);
   };
