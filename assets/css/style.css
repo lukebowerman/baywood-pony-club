@@ -133,7 +133,7 @@ p { margin: 0 0 1em; }
 
 /* Photo placeholders */
 .gallery { display: flex; gap: 16px; margin-top: 32px; }
-.gallery figure { margin: 0; flex-basis: 0; min-width: 0; }
+.gallery figure { margin: 0; flex: var(--r) 1 0; min-width: 0; }
 .gallery a.zoom { display: block; border-radius: 8px; overflow: hidden; cursor: zoom-in; }
 .gallery img { width: 100%; height: auto; transition: transform .2s ease; }
 .gallery a.zoom:hover img { transform: scale(1.04); }
@@ -240,9 +240,11 @@ p { margin: 0 0 1em; }
   .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] .bar:nth-child(4) { transform: translateY(-7px) rotate(-45deg); }
   .stat-grid, .feature-grid, .field-row { grid-template-columns: 1fr; }
-  .gallery { gap: 6px; }
+  /* Two photos per row; each row keeps the photos' shapes at one shared height */
+  .gallery { flex-wrap: wrap; gap: 14px 8px; }
+  .gallery figure { flex-basis: calc(var(--r) * 120px); }
   .gallery a.zoom { border-radius: 6px; }
-  .gallery figcaption { display: none; }
+  .gallery figcaption { font-size: .82rem; }
   .year { grid-template-columns: repeat(6, 1fr); }
   .hero { padding-top: 36px; }
   .interest-form, .price-card { padding: 24px 20px; }
