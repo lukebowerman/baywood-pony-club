@@ -269,3 +269,5 @@ p { margin: 0 0 1em; }
   .resource, .ts-grid { grid-template-columns: 1fr; gap: 28px; }
   .flyer-thumb { max-width: 240px; }
 }
+.social-card { background: #fff; border: 2px solid var(--navy); border-radius: var(--radius); padding: 28px 28px 30px; }
+.social-card h3 { font-size: 1.4rem; margin-bottom: .8em; }
