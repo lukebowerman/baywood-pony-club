@@ -271,3 +271,17 @@ p { margin: 0 0 1em; }
 }
 .social-card { background: #fff; border: 2px solid var(--navy); border-radius: var(--radius); padding: 28px 28px 30px; }
 .social-card h3 { font-size: 1.4rem; margin-bottom: .8em; }
+
+/* Trailer sticker page */
+.sticker-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; }
+.sticker-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; margin-top: 28px; align-items: end; }
+.sticker-card { margin: 0; }
+.sticker-card img { width: 100%; height: auto; filter: drop-shadow(0 10px 22px rgba(19,55,126,.16)); }
+.sticker-grid .sticker-card img { max-height: 260px; width: auto; max-width: 100%; display: block; margin: 0 auto; }
+.sticker-card figcaption { margin-top: 18px; }
+.sticker-card h3 { font-size: 1.2rem; margin-bottom: .5em; }
+.resource-wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.mockup { width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 14px 32px rgba(19,55,126,.14); }
+@media (max-width: 760px) {
+  .sticker-pair, .sticker-grid, .resource-wide { grid-template-columns: 1fr; gap: 28px; }
+}
